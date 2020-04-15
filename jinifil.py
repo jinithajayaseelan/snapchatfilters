@@ -1,0 +1,10 @@
+from PIL import Image
+boom = Image.open("boom.jpg")
+light = Image.open("light.jpg")
+size=(400,400)
+boom.thumbnail(size)
+light.thumbnail(size)
+r, g, b =boom.split()
+rT, gT, bT = light.split()
+final = Image.merge("RGB", (rT,g,b))
+final.show()
